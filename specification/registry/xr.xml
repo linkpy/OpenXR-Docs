@@ -39,6 +39,7 @@ maintained in the default branch of the Khronos OpenXR GitHub project.
         <tag name="DEEPMIRROR" author="Deep Mirror"           contact="Yuhui Lun @lyh-dm"/>
         <tag name="EPIC"       author="Epic"                  contact="Nick Whiting @whitingn"/>
         <tag name="EXT"        author="Multivendor"           contact="Rylie Pavlik @rpavlik"/>
+        <tag name="EXTX"       author="Multivendor"           contact="unknown"/>
         <tag name="FB"         author="Facebook"              contact="Cass Everitt @casseveritt, Jonathan Wright @Nelno"/>
         <tag name="FREDEMMOTT" author="Frederick Emmott"      contact="Frederick Emmott @fredemmott"/>
         <tag name="GOOGLE"     author="Google"                contact="Kaye Mason @chaleur"/>
@@ -805,7 +806,7 @@ maintained in the default branch of the Khronos OpenXR GitHub project.
             <member><type>uint32_t</type>                     <name>structVersion</name></member>
             <member><type>size_t</type>                       <name>structSize</name></member>
             <member><type>void</type>*                        <name>loaderInstance</name></member>
-            <member><type>char</type>                         <name>settings_file_location</name>[XR_API_LAYER_MAX_SETTINGS_PATH_SIZE]</member>
+            <member><type>char</type>                         <name>settings_file_location</name>[<enum>XR_API_LAYER_MAX_SETTINGS_PATH_SIZE</enum>]</member>
             <member><type>XrApiLayerNextInfo</type>*          <name>nextInfo</name></member>
         </type>
 
@@ -1632,7 +1633,7 @@ typedef XrResult (XRAPI_PTR *<name>PFN_xrCreateApiLayerInstance</name>)(
 
 
         <!-- types for XR_MNDX_egl_enable -->
-        <type category="funcpointer">typedef PFN_xrVoidFunction (*<name>PFN_xrEglGetProcAddressMNDX</name>)(const <type>char</type> *name);</type>
+        <type category="funcpointer">typedef PFN_xrVoidFunction (XRAPI_PTR *<name>PFN_xrEglGetProcAddressMNDX</name>)(const <type>char</type> *name);</type>
 
         <type category="struct" name="XrGraphicsBindingEGLMNDX" structextends="XrSessionCreateInfo">
             <member values="XR_TYPE_GRAPHICS_BINDING_EGL_MNDX"><type>XrStructureType</type> <name>type</name></member>
@@ -1846,7 +1847,7 @@ typedef XrResult (XRAPI_PTR *<name>PFN_xrCreateApiLayerInstance</name>)(
         <type category="struct" name="XrEyeGazesFB">
             <member values="XR_TYPE_EYE_GAZES_FB"><type>XrStructureType</type> <name>type</name></member>
             <member><type>void</type>*       <name>next</name></member>
-            <member><type>XrEyeGazeFB</type> <name>gaze</name>[XR_EYE_POSITION_COUNT_FB]</member>
+            <member><type>XrEyeGazeFB</type> <name>gaze</name>[<enum>XR_EYE_POSITION_COUNT_FB</enum>]</member>
             <member><type>XrTime</type>      <name>time</name></member>
         </type>
 
@@ -3620,7 +3621,7 @@ typedef XrResult (XRAPI_PTR *<name>PFN_xrCreateApiLayerInstance</name>)(
         </type>
 
         <type category="struct" name="XrUuid">
-            <member><type>uint8_t</type> <name>data</name>[XR_UUID_SIZE]</member>
+            <member><type>uint8_t</type> <name>data</name>[<enum>XR_UUID_SIZE</enum>]</member>
         </type>
 
         <!-- XR_KHR_maintenance1 -->
@@ -3811,6 +3812,7 @@ typedef XrResult (XRAPI_PTR *<name>PFN_xrCreateApiLayerInstance</name>)(
         <enum value="128"   name="XR_MAX_LOCALIZED_ACTION_SET_NAME_SIZE"/>
         <enum value="128"   name="XR_MAX_LOCALIZED_ACTION_NAME_SIZE"/>
         <enum value="16"    name="XR_UUID_SIZE"/>
+        <enum value="512"   name="XR_API_LAYER_MAX_SETTINGS_PATH_SIZE"/>
     </enums>
 
     <!-- Unlike OpenGL, most tokens in OpenXR are actual typed enumerants in
