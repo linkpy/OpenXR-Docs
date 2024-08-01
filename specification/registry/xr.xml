@@ -9061,7 +9061,6 @@ typedef XrResult (XRAPI_PTR *<name>PFN_xrCreateApiLayerInstance</name>)(
 
             <type name="XrBodyJointFB"/>
             <type name="XrBodyJointSetFB"/>
-            <type name="XrBodyJointFB"/>
             <type name="XrBodyJointLocationFB"/>
 
             <type name="XrSystemBodyTrackingPropertiesFB"/>
